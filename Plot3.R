@@ -3,7 +3,6 @@ houseHoldPowerData <- read.table(file=houseHoldPowerData, header=TRUE, sep=";", 
 dataForPlot <- houseHoldPowerData[houseHoldPowerData$Date %in% c("1/2/2007","2/2/2007"),]
 
 
-
 datetime <- strptime(paste(dataForPlot$Date, dataForPlot$Time, sep=" "), "%d/%m/%Y %H:%M:%S") 
 globalActivePower <- as.numeric(dataForPlot$Global_active_power)
 subMetering1 <- as.numeric(dataForPlot$Sub_metering_1)

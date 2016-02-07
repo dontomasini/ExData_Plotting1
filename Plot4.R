@@ -3,15 +3,14 @@ houseHoldPowerData <- read.table(file=houseHoldPowerData, header=TRUE, sep=";", 
 dataForPlot <- houseHoldPowerData[houseHoldPowerData$Date %in% c("1/2/2007","2/2/2007"),]
 
 
-
 datetime <- strptime(paste(dataForPlot$Date, dataForPlot$Time, sep=" "), "%d/%m/%Y %H:%M:%S") 
 datetime <- strptime(paste(dataForPlot$Date, subSetData$Time, sep=" "), "%d/%m/%Y %H:%M:%S") 
 globalActivePower <- as.numeric(dataForPlot$Global_active_power)
 globalReactivePower <- as.numeric(dataForPlot$Global_reactive_power)
+voltage <- as.numeric(dataForPlot$Voltage)
 subMetering1 <- as.numeric(dataForPlot$Sub_metering_1)
 subMetering2 <- as.numeric(dataForPlot$Sub_metering_2)
 subMetering3 <- as.numeric(dataForPlot$Sub_metering_3)
-
 
 
 png("plot4.png", width=480, height=480)
